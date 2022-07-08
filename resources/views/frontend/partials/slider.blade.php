@@ -3,8 +3,8 @@
         @foreach($sliders as $slider)
             <div class="carousel-item" style="background-image: url({{Storage::url('slider/'.$slider->image)}})" href="#{{$slider->id}}!">
                 <div class="slider-content">
-                    <h2 class="white-text">{{ $slider->title }}</h2>
-                    <p class="white-text">{{ $slider->description }}</p>
+                    {{-- <h2 class="white-text">{{ $slider->title }}</h2>
+                    <p class="white-text">{{ $slider->description }}</p> --}}
                 </div>
             </div>
         @endforeach

@@ -2,15 +2,21 @@
     <div class="container">
         <div class="row">
             <div class="col m4 s12">
-                <h5 class="white-text uppercase">About Us</h5>
+                <h5 class="white-text uppercase">Acerca de nosotros</h5>
                 @if(isset($footersettings[0]) && $footersettings[0]['aboutus'])
                     <p class="grey-text text-lighten-4">{{ $footersettings[0]['aboutus'] }}</p>
                 @else
-                    <p class="grey-text text-lighten-4">Real estate company description goes here.</p>
+                    <p class="grey-text text-lighten-4">Este proyecto busca llevar a la población de Costa Rica, la oportunidad de adquirir su casa, lote, 
+                        vehículo u otro bien en poder de un Banco o entidad financiera, a un precio menor al que normalmente se encuentra en el mercado. 
+                        El Grupo Easypro está constituido por expertos en Banca y finanzas, con un promedio de más de 20 años de ocupar puestos Gerenciales 
+                        en la Banca Nacional e Internacional y empresas de trayectoria que forman parte del grupo. Todo esto nos permite poner a su disposición 
+                        consejos para el financiamiento, cuidados a la hora de comprar, re modelar, construir o invertir. La Lista de propiedades, 
+                        casas en remates judiciales, venta de bienes muebles, Casas en venta y alquiler se tramitan finalmente con los dueños, 
+                        los cuales en su mayoría son Bancos, Cooperativas, Mutuales, entre otros.</p>
                 @endif
             </div>
             <div class="col m6 s12">
-                <h5 class="white-text uppercase">Recent Properties</h5>
+                <h5 class="white-text uppercase">Propiedades Recientes</h5>
                 <ul class="collection border0">
 
                     @foreach($footerproperties as $property)
@@ -31,15 +37,15 @@
                 <h5 class="white-text uppercase">Menu</h5>
                 <ul>
                     <li class="uppercase {{ Request::is('property*') ? 'underline' : '' }}">
-                        <a href="{{ route('property') }}" class="grey-text text-lighten-3">Properties</a>
+                        <a href="{{ route('property') }}" class="grey-text text-lighten-3">Propiedades</a>
                     </li>
 
                     <li class="uppercase {{ Request::is('agents*') ? 'underline' : '' }}">
-                        <a href="{{ route('agents') }}" class="grey-text text-lighten-3">Agents</a>
+                        <a href="{{ route('agents') }}" class="grey-text text-lighten-3">Agentes</a>
                     </li>
 
                     <li class="uppercase {{ Request::is('gallery*') ? 'underline' : '' }}">
-                        <a href="{{ route('gallery') }}" class="grey-text text-lighten-3">Gallery</a>
+                        <a href="{{ route('gallery') }}" class="grey-text text-lighten-3">Galeria</a>
                     </li>
 
                     <li class="uppercase {{ Request::is('blog*') ? 'underline' : '' }}">
@@ -47,7 +53,7 @@
                     </li>
 
                     <li class="uppercase {{ Request::is('contact') ? 'underline' : '' }}">
-                        <a href="{{ route('contact') }}" class="grey-text text-lighten-3">Contact</a>
+                        <a href="{{ route('contact') }}" class="grey-text text-lighten-3">Contactanos</a>
                     </li>
                 </ul>
             </div>
@@ -58,7 +64,7 @@
             @if(isset($footersettings[0]) && $footersettings[0]['footer'])
                 {{ $footersettings[0]['footer'] }}
             @else
-                © 2018 Developer Canvas Studio.
+                © 2021 Developer Edenilson Ruiz.
             @endif
 
             @if(isset($footersettings[0]) && $footersettings[0]['facebook'])

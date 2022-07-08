@@ -25,14 +25,14 @@
                             <div class="col s6">
                                 <div class="box indigo white-text p-30">
                                     <i class="material-icons left">location_city</i>
-                                    <span class="truncate uppercase bold font-18">Properties</span>
+                                    <span class="truncate uppercase bold font-18">Propiedades</span>
                                     <h4 class="m-t-10 m-b-0">{{ $propertytotal }}</h4>
                                 </div>
                             </div>
                             <div class="col s6">
                                 <div class="box indigo white-text p-30">
                                     <i class="material-icons left">mail</i>
-                                    <span class="truncate uppercase bold font-18">Messages</span>
+                                    <span class="truncate uppercase bold font-18">Mensajes</span>
                                     <h4 class="m-t-10 m-b-0">{{ $messagetotal }}</h4>
                                 </div>
                             </div>
@@ -42,7 +42,7 @@
                             <div class="col s6">
                                 <div class="box indigo white-text p-20">
                                     <i class="material-icons left font-18">location_city</i>
-                                    <span class="truncate uppercase bold">Recent Properties</span>
+                                    <span class="truncate uppercase bold">Propiedades Recientes</span>
                                 </div>
                                 <div class="box-content">
                                     @foreach($properties as $key => $property)
@@ -59,7 +59,7 @@
                             <div class="col s6">
                                 <div class="box indigo white-text p-20">
                                     <i class="material-icons left font-18">mail</i>
-                                    <span class="truncate uppercase bold">Recent Mails</span>
+                                    <span class="truncate uppercase bold">Correos Recientes</span>
                                 </div>
                                 <div class="box-content">
                                     @foreach($messages as $message)

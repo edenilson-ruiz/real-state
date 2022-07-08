@@ -7,7 +7,7 @@
     <section class="section grey lighten-4 center">
         <div class="container">
             <div class="row">
-                <h4 class="section-heading">Services</h4>
+                <h4 class="section-heading">Servicios</h4>
             </div>
             <div class="row">
                 @foreach($services as $service)
@@ -29,7 +29,7 @@
     <section class="section">
         <div class="container">
             <div class="row">
-                <h4 class="section-heading">Featured Properties</h4>
+                <h4 class="section-heading">Propiedades destacadas</h4>
             </div>
             <div class="row">
 
@@ -101,7 +101,7 @@
     <section class="section grey lighten-3 center">
         <div class="container">
 
-            <h4 class="section-heading">Testimonials</h4>
+            <h4 class="section-heading">Testimoniales</h4>
 
             <div class="carousel testimonials">
 
@@ -133,7 +133,7 @@
 
     <section class="section center">
         <div class="row">
-            <h4 class="section-heading">Recent Blog</h4>
+            <h4 class="section-heading">Post Recientes</h4>
         </div>
         <div class="container">
             <div class="row">

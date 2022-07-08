@@ -1,35 +1,35 @@
 <div class="navbar-fixed">
     <nav class="indigo darken-4">
-        <div class="container">
+        <div class="container-fluid">           
             <div class="nav-wrapper">
-
-                <a href="{{ route('home') }}" class="brand-logo">
+                {{-- <a href="{{ route('home') }}" class="brand-logo">
                     @if(isset($navbarsettings[0]) && $navbarsettings[0]['name'])
                         {{ $navbarsettings[0]['name'] }}
                     @else
-                        Real State
+                        
                     @endif
                     <i class="material-icons left">location_city</i>
-                </a>
+                </a> --}}
+                
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger">
                     <i class="material-icons">menu</i>
                 </a>
                 
                 <ul class="right hide-on-med-and-down">
                     <li class="{{ Request::is('/') ? 'active' : '' }}">
-                        <a href="{{ route('home') }}">Home</a>
+                        <a href="{{ route('home') }}">Inicio</a>
                     </li>
 
                     <li class="{{ Request::is('property*') ? 'active' : '' }}">
-                        <a href="{{ route('property') }}">Properties</a>
+                        <a href="{{ route('property') }}">Propiedades</a>
                     </li>
 
                     <li class="{{ Request::is('agents*') ? 'active' : '' }}">
-                        <a href="{{ route('agents') }}">Agents</a>
+                        <a href="{{ route('agents') }}">Agentes</a>
                     </li>
 
                     <li class="{{ Request::is('gallery') ? 'active' : '' }}">
-                        <a href="{{ route('gallery') }}">Gallery</a>
+                        <a href="{{ route('gallery') }}">Galeria</a>
                     </li>
 
                     <li class="{{ Request::is('blog*') ? 'active' : '' }}">
@@ -37,7 +37,7 @@
                     </li>
 
                     <li class="{{ Request::is('contact') ? 'active' : '' }}">
-                        <a href="{{ route('contact') }}">Contact</a>
+                        <a href="{{ route('contact') }}">Contactanos</a>
                     </li>
 
                     @guest
@@ -55,15 +55,15 @@
                             <li>
                                 @if(Auth::user()->role->id == 1)
                                     <a href="{{ route('admin.dashboard') }}" class="indigo-text">
-                                        <i class="material-icons">person</i>Profile
+                                        <i class="material-icons">person</i>Perfil
                                     </a>
                                 @elseif(Auth::user()->role->id == 2)
                                     <a href="{{ route('agent.dashboard') }}" class="indigo-text">
-                                        <i class="material-icons">person</i>Profile
+                                        <i class="material-icons">person</i>Perfil
                                     </a>
                                 @elseif(Auth::user()->role->id == 3)
                                     <a href="{{ route('user.dashboard') }}" class="indigo-text">
-                                        <i class="material-icons">person</i>Profile
+                                        <i class="material-icons">person</i>Perfil
                                     </a>
                                 @endif
                             </li>
@@ -82,25 +82,24 @@
 
                     @endguest
                 </ul>
-            </div>
-        </div>
+            </div>          
+        </div>        
     </nav>
-    
     <ul class="sidenav" id="mobile-demo">
         <li class="{{ Request::is('/') ? 'active' : '' }}">
-            <a href="{{ route('home') }}">Home</a>
+            <a href="{{ route('home') }}">Inicio</a>
         </li>
 
         <li class="{{ Request::is('property*') ? 'active' : '' }}">
-            <a href="{{ route('property') }}">Properties</a>
+            <a href="{{ route('property') }}">Propiedades</a>
         </li>
 
         <li class="{{ Request::is('agents*') ? 'active' : '' }}">
-            <a href="{{ route('agents') }}">Agents</a>
+            <a href="{{ route('agents') }}">Agentes</a>
         </li>
 
         <li class="{{ Request::is('gallery') ? 'active' : '' }}">
-            <a href="{{ route('gallery') }}">Gallery</a>
+            <a href="{{ route('gallery') }}">Galeria</a>
         </li>
 
         <li class="{{ Request::is('blog*') ? 'active' : '' }}">
@@ -108,8 +107,12 @@
         </li>
 
         <li class="{{ Request::is('contact') ? 'active' : '' }}">
-            <a href="{{ route('contact') }}">Contact</a>
+            <a href="{{ route('contact') }}">Contactanos</a>
         </li>
     </ul>
 
+</div>
+
+<div class="fixed">
+    <img src="{{ url('frontend/images/Logo-BA.png') }}" alt="" width="150px" height="65x">
 </div>

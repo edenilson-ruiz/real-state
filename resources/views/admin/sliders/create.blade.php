@@ -15,10 +15,10 @@
             <div class="card">
                 <div class="header bg-indigo">
                     <h2>
-                        CREATE SLIDER
+                        CREAR SLIDER
                         <a href="{{route('admin.sliders.index')}}" class="waves-effect waves-light btn right headerightbtn">
                             <i class="material-icons left">arrow_back</i>
-                            <span>BACK</span>
+                            <span>REGRESAR</span>
                         </a>
                     </h2>
                 </div>
@@ -29,14 +29,14 @@
                         <div class="form-group form-float">
                             <div class="form-line">
                                 <input type="text" name="title" class="form-control">
-                                <label class="form-label">Title</label>
+                                <label class="form-label">Titulo</label>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="form-line">
                                 <textarea name="description" rows="4" class="form-control no-resize"></textarea>
-                                <label class="form-label">Description</label>
+                                <label class="form-label">Descripcion</label>
                             </div>
                         </div>
 
@@ -45,13 +45,13 @@
                             <input type="file" name="image" id="slider-image-input" style="display:none;">
                             <button type="button" class="btn bg-grey btn-sm waves-effect m-t-15" id="slider-image-btn">
                                 <i class="material-icons">image</i>
-                                <span>UPLOAD IMAGE</span>
+                                <span>CARGAR IMAGEN</span>
                             </button>
                         </div>
 
                         <button type="submit" class="btn btn-indigo btn-lg m-t-15 waves-effect">
                             <i class="material-icons">save</i>
-                            <span>SAVE</span>
+                            <span>GUARDAR</span>
                         </button>
 
                     </form>

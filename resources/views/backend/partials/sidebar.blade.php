@@ -4,7 +4,7 @@
         <div class="menu">
             <ul class="list">
 
-                <li class="header">MAIN NAVIGATION</li>
+                <li class="header">NAVEGACION PRINCIPAL</li>
                 
                 <li class="{{ Request::is('admin/dashboard') ? 'active' : '' }}">
                     <a href="{{ route('admin.dashboard') }}">
@@ -21,27 +21,27 @@
                 <li class="{{ Request::is('admin/properties*') ? 'active' : '' }}">
                     <a href="{{ route('admin.properties.index') }}">
                         <i class="material-icons">home</i>
-                        <span>Property</span>
+                        <span>Propiedades</span>
                     </a>
                 </li>
                 <li class="{{ Request::is('admin/features*') ? 'active' : '' }}">
                     <a href="{{ route('admin.features.index') }}">
                         <i class="material-icons">star</i>
-                        <span>Features</span>
+                        <span>Destacados</span>
                     </a>
                 </li>
 
                 <li class="{{ Request::is('admin/services*') ? 'active' : '' }}">
                     <a href="{{ route('admin.services.index') }}">
                         <i class="material-icons">wb_sunny</i>
-                        <span>Services</span>
+                        <span>Servicios</span>
                     </a>
                 </li>
 
                 <li class="{{ Request::is('admin/testimonials*') ? 'active' : '' }}">
                     <a href="{{ route('admin.testimonials.index') }}">
                         <i class="material-icons">view_carousel</i>
-                        <span>Testimonials</span>
+                        <span>Testimoniales</span>
                     </a>
                 </li>
 
@@ -49,13 +49,13 @@
                 <li class="{{ Request::is('admin/categories*') ? 'active' : '' }}">
                     <a href="{{ route('admin.categories.index') }}">
                         <i class="material-icons">category</i>
-                        <span>Categories</span>
+                        <span>Categorias</span>
                     </a>
                 </li>
                 <li class="{{ Request::is('admin/tags*') ? 'active' : '' }}">
                     <a href="{{ route('admin.tags.index') }}">
                         <i class="material-icons">label</i>
-                        <span>Tags</span>
+                        <span>Etiquetas</span>
                     </a>
                 </li>
                 <li class="{{ Request::is('admin/posts*') ? 'active' : '' }}">
@@ -69,34 +69,34 @@
                 <li class="{{ Request::is('admin/galleries*') ? 'active' : '' }}">
                     <a href="{{ route('admin.album') }}">
                         <i class="material-icons">view_list</i>
-                        <span>Gallery</span>
+                        <span>Galerias</span>
                     </a>
                 </li>
  
                 <li class="{{ Request::is('admin/settings*') ? 'active' : '' }}">
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">settings</i>
-                        <span>Settings</span>
+                        <span>Configuraciones</span>
                     </a>
                     <ul class="ml-menu">
                         <li class="{{ Request::is('admin/settings') ? 'active' : '' }}">
                             <a href="{{ route('admin.settings') }}">
-                                <span>Settings</span>
+                                <span>Ajustes</span>
                             </a>
                         </li>
                         <li class="{{ Request::is('admin/changepassword') ? 'active' : '' }}">
                             <a href="{{ route('admin.changepassword') }}">
-                                <span>Change Password</span>
+                                <span>Cambiar Password</span>
                             </a>
                         </li>
                         <li class="{{ Request::is('admin/profile') ? 'active' : '' }}">
                             <a href="{{ route('admin.profile') }}">
-                                <span>Profile</span>
+                                <span>Perfil</span>
                             </a>
                         </li>
                         <li class="{{ Request::is('admin/message*') ? 'active' : '' }}">
                             <a href="{{ route('admin.message') }}">
-                                <span>Message</span>
+                                <span>Mensaje</span>
                             </a>
                         </li>
                     </ul>

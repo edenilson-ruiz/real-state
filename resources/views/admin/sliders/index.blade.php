@@ -18,10 +18,10 @@
             <div class="card">
                 <div class="header bg-indigo">
                     <h2>
-                        SLIDER LIST
+                        LISTA DE SLIDERS
                         <a href="{{route('admin.sliders.create')}}" class="btn waves-effect waves-light right headerightbtn">
                             <i class="material-icons left">add</i>
-                            <span>CREATE </span>
+                            <span>CREAR </span>
                         </a>
                     </h2>
                 </div>
@@ -31,10 +31,10 @@
                             <thead>
                                 <tr>
                                     <th>SL.</th>
-                                    <th>Image</th>
-                                    <th>Title</th>
-                                    <th>Description</th>
-                                    <th width="100px">Action</th>
+                                    <th>Imagen</th>
+                                    <th>Titulo</th>
+                                    <th>Descripcion</th>
+                                    <th width="100px">Accion</th>
                                 </tr>
                             </thead>
                             <tbody>

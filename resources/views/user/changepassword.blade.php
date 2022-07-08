@@ -18,7 +18,7 @@
 
                 <div class="col s12 m9">
                     <div class="agent-content">
-                        <h4 class="agent-title">Change Password</h4>
+                        <h4 class="agent-title">Cambiar Password</h4>
 
                         <form action="{{route('user.changepassword.update')}}" method="POST" enctype="multipart/form-data">
                             @csrf
@@ -26,13 +26,13 @@
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">lock_open</i>
                                 <input id="currentpassword" name="currentpassword" type="password" class="validate">
-                                <label for="currentpassword">Current Password</label>
+                                <label for="currentpassword">Reciente Password</label>
                             </div>
 
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">lock_outline</i>
                                 <input id="newpassword" name="newpassword" type="password" class="validate">
-                                <label for="newpassword">New Password</label>
+                                <label for="newpassword">Nuevo Password</label>
                             </div>
 
                             <div class="input-field col s12">
@@ -42,7 +42,7 @@
                             </div>
 
                             <button class="btn waves-effect waves-light indigo darken-4 m-l-30" type="submit">
-                                Submit
+                                Enviar
                                 <i class="material-icons right">send</i>
                             </button>
 
