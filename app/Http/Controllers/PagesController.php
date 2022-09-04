@@ -34,6 +34,7 @@ class PagesController extends Controller
         $property = Property::with('features','gallery','user','comments')
                             ->withCount('comments')
                             ->where('slug', $slug)
+                            ->orWhere('id', $slug)
                             ->first();
 
         $rating = Rating::where('property_id',$property->id)->where('type','property')->avg('rating');                   
