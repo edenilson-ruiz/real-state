@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="city-categories">
                     @foreach($cities as $city)
-                        <div class="col s12 m3">
+                        <div class="col s12 m3">                            
                             <a href="{{ route('property.city',$city->city_slug) }}">
                                 <div class="city-category">
                                     <span>{{ $city->city }}</span>
@@ -51,10 +51,10 @@
                                     <i class="small material-icons left">place</i>
                                     <span>{{ ucfirst($property->city) }}</span>
                                 </div>
-                                <div class="address">
+                               {{--  <div class="address">
                                     <i class="small material-icons left">language</i>
                                     <span>{{ ucfirst($property->address) }}</span>
-                                </div>
+                                </div> --}}
 
                                 <div class="address">
                                     <i class="small material-icons left">check_box</i>
@@ -81,7 +81,7 @@
                                 </span>
                                 <span class="btn-flat">
                                     <i class="material-icons">check_box</i>
-                                    Area: <strong>{{ $property->area}}</strong> Square Feet
+                                    Area: <strong>{{ $property->area}}</strong> Metros cuadrados
                                 </span>
                                 <span class="btn-flat">
                                     <i class="material-icons">comment</i> 

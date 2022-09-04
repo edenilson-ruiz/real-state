@@ -55,10 +55,10 @@
                                     <i class="small material-icons left">location_city</i>
                                     <span>{{ ucfirst($property->city) }}</span>
                                 </div>
-                                <div class="address">
+                                {{-- <div class="address">
                                     <i class="small material-icons left">place</i>
                                     <span>{{ ucfirst($property->address) }}</span>
-                                </div>
+                                </div> --}}
                                 <div class="address">
                                     <i class="small material-icons left">check_box</i>
                                     <span>{{ ucfirst($property->type) }} for {{ $property->purpose }}</span>

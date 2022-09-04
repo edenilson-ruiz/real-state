@@ -69,15 +69,15 @@
                             <a class="btn-floating btn-small disabled"><i class="material-icons">star</i></a>
                         @endif
 
-                        <span class="btn btn-small disabled b-r-20">Bedroom: {{ $property->bedroom}} </span>
-                        <span class="btn btn-small disabled b-r-20">Bathroom: {{ $property->bathroom}} </span>
-                        <span class="btn btn-small disabled b-r-20">Area: {{ $property->area}} Sq Ft</span>
+                        <span class="btn btn-small disabled b-r-20">Dormitorios: {{ $property->bedroom}} </span>
+                        <span class="btn btn-small disabled b-r-20">Baños: {{ $property->bathroom}} </span>
+                        <span class="btn btn-small disabled b-r-20">Area: {{ $property->area}} m2</span>
                     </div>
                 </div>
                 <div class="col s12 m4">
                     <div>
-                        <h4 class="left">${{ $property->price }}</h4>
-                        <button type="button" class="btn btn-small m-t-25 right disabled b-r-20"> For {{ $property->purpose }}</button>
+                        <h4 class="left">{{ $property->price ? '$ ' . number_format($property->price) : '₡ '.number_format($property->price_local) }}</h4>
+                        <button type="button" class="btn btn-small m-t-25 right disabled b-r-20"> EN {{ $property->purpose }}</button>
                     </div>
                 </div>
             </div>
@@ -101,18 +101,18 @@
                         {!! $property->description !!}
                     </div>
 
-                    <div>
+                   {{--  <div>
                         @if($property->features)
                             <ul class="collection with-header">
-                                <li class="collection-header grey lighten-4"><h5 class="m-0">Features</h5></li>
+                                <li class="collection-header grey lighten-4"><h5 class="m-0">Caracteristicas</h5></li>
                                 @foreach($property->features as $feature)
                                     <li class="collection-item">{{$feature->name}}</li>
                                 @endforeach
                             </ul>
                         @endif
-                    </div>
+                    </div> --}}
 
-                    <div class="card-no-box-shadow card">
+                    {{-- <div class="card-no-box-shadow card">
                         <div class="p-15 grey lighten-4">
                             <h5 class="m-0">Floor Plan</h5>
                         </div>
@@ -121,11 +121,11 @@
                                 <img src="{{Storage::url('property/'.$property->floor_plan)}}" alt="{{$property->title}}" class="imgresponsive">
                             @endif
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="card-no-box-shadow card">
                         <div class="p-15 grey lighten-4">
-                            <h5 class="m-0">Location</h5>
+                            <h5 class="m-0">Ubicacion</h5>
                         </div>
                         <div class="card-image">
                             <div id="map"></div>
@@ -143,19 +143,19 @@
                         </div>
                     @endif
 
-                    <div class="card-no-box-shadow card">
+                   {{--  <div class="card-no-box-shadow card">
                         <div class="p-15 grey lighten-4">
-                            <h5 class="m-0">Near By</h5>
+                            <h5 class="m-0">Cerca de</h5>
                         </div>
                         <div class="single-narebay p-15">
                             {!! $property->nearby !!}
                         </div>
                     </div>
-
+ --}}
                     <div class="card-no-box-shadow card">
                         <div class="p-15 grey lighten-4">
                             <h5 class="m-0">
-                                {{ $property->comments_count }} Comments
+                                {{ $property->comments_count }} Comentarios
                                 @auth
                                 <div class="right" id="rateYo"></div>
                                 @endauth
@@ -239,7 +239,7 @@
                         <div>
                             <ul class="collection with-header m-t-0">
                                 <li class="collection-header grey lighten-4">
-                                    <h5 class="m-0">Contact with Agent</h5>
+                                    <h5 class="m-0">Contactar con Agente</h5>
                                 </li>
                                 <li class="collection-item p-0">
                                     @if($property->user)
@@ -256,7 +256,7 @@
                                         </div>
                                         <div class="p-l-10 p-r-10">
                                             <p>{{ $property->user->about }}</p>
-                                            <a href="{{ route('agents.show',$property->agent_id) }}" class="profile-link">Profile</a>
+                                            <a href="{{ route('agents.show',$property->agent_id) }}" class="profile-link">Perfil</a>
                                         </div>
                                     @endif
                                 </li>
@@ -269,20 +269,20 @@
                                         <input type="hidden" name="property_id" value="{{ $property->id }}">
                                             
                                         <div class="box">
-                                            <input type="text" name="name" placeholder="Your Name">
+                                            <input type="text" name="name" placeholder="Su nombre">
                                         </div>
                                         <div class="box">
-                                            <input type="email" name="email" placeholder="Your Email">
+                                            <input type="email" name="email" placeholder="Su correo">
                                         </div>
                                         <div class="box">
-                                            <input type="number" name="phone" placeholder="Your Phone">
+                                            <input type="number" name="phone" placeholder="Su telefono">
                                         </div>
                                         <div class="box">
-                                            <textarea name="message" placeholder="Your Msssage"></textarea>
+                                            <textarea name="message" placeholder="Su Mensaje"></textarea>
                                         </div>
                                         <div class="box">
                                             <button id="msgsubmitbtn" class="btn waves-effect waves-light w100 indigo" type="submit">
-                                                SEND
+                                                ENVIAR
                                                 <i class="material-icons left">send</i>
                                             </button>
                                         </div>
@@ -294,7 +294,7 @@
                         <div>
                             <ul class="collection with-header">
                                 <li class="collection-header grey lighten-4">
-                                    <h5 class="m-0">City List</h5>
+                                    <h5 class="m-0">LISTA DE CIUDADES</h5>
                                 </li>
                                 @foreach($cities as $city)
                                     <li class="collection-item p-0">
@@ -309,7 +309,7 @@
                         <div>
                             <ul class="collection with-header">
                                 <li class="collection-header grey lighten-4">
-                                    <h5 class="m-0">Related Properties</h5>
+                                    <h5 class="m-0">Propiedades Relacionadas</h5>
                                 </li>
                                 @foreach($relatedproperty as $property_related)
                                     <li class="collection-item p-0">

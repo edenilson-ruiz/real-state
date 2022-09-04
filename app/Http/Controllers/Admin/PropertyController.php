@@ -37,6 +37,8 @@ class PropertyController extends Controller
 
     public function store(Request $request)
     {
+        define('IMG_TYPE','file|mimes:jpeg,jpg,png');
+        
         $request->validate([
             'title'     => 'required|unique:properties|max:255',
             'price'     => 'required',
@@ -47,11 +49,9 @@ class PropertyController extends Controller
             'city'      => 'required',
             'address'   => 'required',
             'area'      => 'required',
-            'image'     => 'required|image|mimes:jpeg,jpg,png',
-            'floor_plan'=> 'image|mimes:jpeg,jpg,png',
-            'description'        => 'required',
-            'location_latitude'  => 'required',
-            'location_longitude' => 'required',
+            'image'     => 'required|'.IMG_TYPE,
+            //'floor_plan'=> IMG_TYPE,
+            'description'        => 'required'
         ]);
 
         $image = $request->file('image');
@@ -172,8 +172,8 @@ class PropertyController extends Controller
             'city'      => 'required',
             'address'   => 'required',
             'area'      => 'required',
-            'image'     => 'image|mimes:jpeg,jpg,png',
-            'floor_plan'=> 'image|mimes:jpeg,jpg,png',
+            //'image'     => 'image|mimes:jpeg,jpg,png',
+            //'floor_plan'=> 'image|mimes:jpeg,jpg,png',  
             'description'        => 'required',
             'location_latitude'  => 'required',
             'location_longitude' => 'required'

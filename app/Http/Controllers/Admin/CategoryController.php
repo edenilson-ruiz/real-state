@@ -31,7 +31,7 @@ class CategoryController extends Controller
     {
         $request->validate([
             'name'  => 'required|unique:categories|max:255',
-            'image' => 'required|mimes:jpeg,jpg,png'
+            'image' => 'required|file|mimes:jpeg,jpg,png'
         ]);
 
         $image = $request->file('image');
@@ -44,13 +44,13 @@ class CategoryController extends Controller
             if(!Storage::disk('public')->exists('category/slider')){
                 Storage::disk('public')->makeDirectory('category/slider');
             }
-            $slider = Image::make($image)->resize(1600, 480)->save();
+            $slider = Image::make($image)->resize(1600, 480)->stream();
             Storage::disk('public')->put('category/slider/'.$imagename, $slider);
 
             if(!Storage::disk('public')->exists('category/thumb')){
                 Storage::disk('public')->makeDirectory('category/thumb');
             }
-            $thumb = Image::make($image)->resize(500, 330)->save();
+            $thumb = Image::make($image)->resize(500, 330)->stream();
             Storage::disk('public')->put('category/thumb/'.$imagename, $thumb);
         }else{
             $imagename = 'default.png';
@@ -102,7 +102,7 @@ class CategoryController extends Controller
             if(Storage::disk('public')->exists('category/slider/'.$category->image)){
                 Storage::disk('public')->delete('category/slider/'.$category->image);
             }
-            $slider = Image::make($image)->resize(1600, 480)->save();
+            $slider = Image::make($image)->resize(1600, 480)->stream();
             Storage::disk('public')->put('category/slider/'.$imagename, $slider);
 
             if(!Storage::disk('public')->exists('category/thumb')){
@@ -111,7 +111,7 @@ class CategoryController extends Controller
             if(Storage::disk('public')->exists('category/thumb/'.$category->image)){
                 Storage::disk('public')->delete('category/thumb/'.$category->image);
             }
-            $thumb = Image::make($image)->resize(500, 330)->save();
+            $thumb = Image::make($image)->resize(500, 330)->stream();
             Storage::disk('public')->put('category/thumb/'.$imagename, $thumb);
         }else{
             $imagename = $category->image;

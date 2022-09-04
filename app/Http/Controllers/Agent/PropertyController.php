@@ -46,11 +46,8 @@ class PropertyController extends Controller
             'city'      => 'required',
             'address'   => 'required',
             'area'      => 'required',
-            'image'     => 'required|image|mimes:jpeg,jpg,png',
-            'floor_plan'=> 'image|mimes:jpeg,jpg,png',
-            'description'        => 'required',
-            'location_latitude'  => 'required',
-            'location_longitude' => 'required',
+            'image'     => 'required|file|mimes:jpg,jpeg,png,gif|max:1024',
+            'description'   => 'required'
         ]);
 
         $image = $request->file('image');

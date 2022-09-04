@@ -29,7 +29,7 @@ class TestimonialController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'image' => 'required|mimes:jpeg,jpg,png',
+            'image' => 'required|file|mimes:jpeg,jpg,png',
             'testimonial' => 'required|max:200'
         ]);
 
@@ -43,7 +43,7 @@ class TestimonialController extends Controller
             if(!Storage::disk('public')->exists('testimonial')){
                 Storage::disk('public')->makeDirectory('testimonial');
             }
-            $testimonial = Image::make($image)->resize(160, 160)->save();
+            $testimonial = Image::make($image)->resize(160, 160)->stream();
             Storage::disk('public')->put('testimonial/'.$imagename, $testimonial);
         }else{
             $imagename = 'default.png';
@@ -72,7 +72,7 @@ class TestimonialController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'image' => 'mimes:jpeg,jpg,png',
+            'image'     => 'file|mimes:jpg,jpeg,png,gif|max:1024',
             'testimonial' => 'required|max:200',
         ]);
 
@@ -89,7 +89,7 @@ class TestimonialController extends Controller
             if(Storage::disk('public')->exists('testimonial/'.$testimonial->image)){
                 Storage::disk('public')->delete('testimonial/'.$testimonial->image);
             }
-            $testimonialimg = Image::make($image)->resize(160, 160)->save();
+            $testimonialimg = Image::make($image)->resize(160, 160)->stream();
             Storage::disk('public')->put('testimonial/'.$imagename, $testimonialimg);
         }else{
             $imagename = $testimonial->image;

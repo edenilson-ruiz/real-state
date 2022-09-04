@@ -29,7 +29,7 @@ class SliderController extends Controller
     {
         $request->validate([
             'title' => 'required|unique:sliders|max:255',
-            'image' => 'required|mimes:jpeg,jpg,png'
+            'image' => 'required|file|mimes:jpeg,jpg,png'
         ]);
 
         $image = $request->file('image');

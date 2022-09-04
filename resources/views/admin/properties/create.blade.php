@@ -151,13 +151,13 @@
                         <h5>Google Map</h5>
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" name="location_latitude" class="form-control" required/>
+                                <input type="text" name="location_latitude" class="form-control"/>
                                 <label class="form-label">Latitude</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" name="location_longitude" class="form-control" required/>
+                                <input type="text" name="location_longitude" class="form-control"/>
                                 <label class="form-label">Longitude</label>
                             </div>
                         </div>
