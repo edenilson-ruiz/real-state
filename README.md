@@ -38,15 +38,15 @@ REMS is a simple PHP script based on Laravel that helps you to manage small or m
 
 
 ### Install
-01. `git clone https://github.com/parvez-git/real-estate.git`
-02. `cd real-estate`
-03. `composer install`
-04. `cp .env.example .env`
-05. `php artisan key:generate`
-06. `php artisan migrate`
-07. `php artisan db:seed`
-08. `php artisan storage:link`
-09. `php artisan serve`
+
+01. `cd real-estate`
+02. `composer install`
+03. `cp .env.example .env`
+04. `php artisan key:generate`
+05. `php artisan migrate`
+06. `php artisan db:seed`
+07. `php artisan storage:link`
+08. `php artisan serve`
 
 #### Cridentials
 01. 
