@@ -26,7 +26,7 @@
                 </div>
                 <div class="body">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                        <table id="example" class="table table-bordered table-striped table-hover js-exportable">
                             <thead>
                                 <tr>
                                     <th>SL.</th>
@@ -39,7 +39,7 @@
                                     <th>Baths</th>
                                     <th><i class="material-icons small">comment</i></th>
                                     <th><i class="material-icons small">stars</i></th>
-                                    <th width="150">Action</th>
+                                    <th style="width: 150px">Action</th>
                                 </tr>
                             </thead>
 
