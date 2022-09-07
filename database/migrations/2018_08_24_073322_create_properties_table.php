@@ -26,6 +26,10 @@ class CreatePropertiesTable extends Migration
             $table->integer('bathroom');
             $table->string('city');
             $table->string('city_slug');
+            // fk doctor
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->string('address')->nullable();
             $table->integer('area')->nullable();
             $table->integer('agent_id');
