@@ -1,5 +1,9 @@
 <?php
 
+Route::get('datatables', 'DatatablesController@getIndex')->name('datatables');
+Route::get('anyData', 'DatatablesController@anyData')->name('datatables.data');
+Route::get('allProperties', 'DatatablesController@allProperties')->name('datatables.properties');
+
 // FRONT-END ROUTES
 Route::get('/', 'FrontpageController@index')->name('home');
 Route::get('/slider', 'FrontpageController@slider')->name('slider.index');
@@ -7,6 +11,7 @@ Route::get('/slider', 'FrontpageController@slider')->name('slider.index');
 Route::get('/search', 'FrontpageController@search')->name('search');
 
 Route::get('/property', 'PagesController@properties')->name('property');
+Route::get('/properties','PropertyController@index')->name('properties.index');
 Route::get('/property/{id}', 'PagesController@propertieshow')->name('property.show');
 Route::post('/property/message', 'PagesController@messageAgent')->name('property.message');
 Route::post('/property/comment/{id}', 'PagesController@propertyComments')->name('property.comment');

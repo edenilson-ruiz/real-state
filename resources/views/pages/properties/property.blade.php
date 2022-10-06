@@ -71,13 +71,43 @@
                                 </h5>                                
                             </div>
                             <div class="card-action property-action">
-                                <span class="btn-flat">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <span class="btn-flat">
+                                                <i class="material-icons">check_box</i>
+                                                Cuartos: <strong>{{ $property->bedroom}}</strong> 
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="btn-flat">
+                                                <i class="material-icons">check_box</i>
+                                                Baños: <strong>{{ $property->bathroom}}</strong> 
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="btn-flat">
+                                                <i class="material-icons">check_box</i>
+                                                Area: <strong>{{ $property->area}}</strong> M2
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="btn-flat">
+                                                <i class="material-icons">comment</i> 
+                                                <strong>{{ $property->comments_count}}</strong>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                {{-- <span class="btn-flat">
                                     <i class="material-icons">check_box</i>
-                                    Bedroom: <strong>{{ $property->bedroom}}</strong> 
+                                    Cuartos: <strong>{{ $property->bedroom}}</strong> 
                                 </span>
                                 <span class="btn-flat">
                                     <i class="material-icons">check_box</i>
-                                    Bathroom: <strong>{{ $property->bathroom}}</strong> 
+                                    Baños: <strong>{{ $property->bathroom}}</strong> 
                                 </span>
                                 <span class="btn-flat">
                                     <i class="material-icons">check_box</i>
@@ -86,7 +116,7 @@
                                 <span class="btn-flat">
                                     <i class="material-icons">comment</i> 
                                     <strong>{{ $property->comments_count}}</strong>
-                                </span>
+                                </span> --}}
                             </div>
                         </div>
                     </div>

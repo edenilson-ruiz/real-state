@@ -52,10 +52,12 @@
                         </div>
                     </div>
 
+                    @include('admin.properties.partials.territory')
+
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="text" class="form-control" name="city" required>
-                            <label class="form-label">City</label>
+                            <input type="text" class="form-control" name="numero_finca" required>
+                            <label class="form-label">Numero de Finca</label>
                         </div>
                     </div>
 
@@ -114,8 +116,8 @@
                             <label>Select Purpose</label>
                             <select name="purpose" class="form-control show-tick">
                                 <option value="">-- Please select --</option>
-                                <option value="sale">Sale</option>
-                                <option value="rent">Rent</option>
+                                <option value="venta">Venta</option>
+                                <option value="renta">Renta</option>
                             </select>
                         </div>
                     </div>
@@ -125,8 +127,9 @@
                             <label>Select type</label>
                             <select name="type" class="form-control show-tick">
                                 <option value="">-- Please select --</option>
-                                <option value="house">House</option>
-                                <option value="apartment">Apartment</option>
+                                <option value="casa">Casa</option>
+                                <option value="apartamento">Apartamento</option>
+                                <option value="edificio">Edifico</option>
                             </select>
                         </div>
                     </div>
@@ -252,5 +255,7 @@
             tinyMCE.baseURL = '{{asset('backend/plugins/tinymce')}}';
         });
     </script>
+    <script src="{{asset('js/properties/create.js')}}"></script>
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>   --}}
 
 @endpush

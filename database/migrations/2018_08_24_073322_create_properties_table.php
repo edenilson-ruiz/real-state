@@ -26,11 +26,26 @@ class CreatePropertiesTable extends Migration
             $table->integer('bathroom');
             $table->string('city');
             $table->string('city_slug');
-            // fk doctor
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
 
-            $table->string('address')->nullable();
+            // fk provincia
+            $table->unsignedBigInteger('provincia_id');
+            $table->foreign('provincia_id')->references('id')->on('provincias');
+
+            // fk canton
+            $table->unsignedBigInteger('canton_id')->nullable();;
+            $table->foreign('canton_id')->references('id')->on('cantones');
+
+            // fk canton
+            $table->unsignedBigInteger('distrito_id')->nullable();;
+            $table->foreign('distrito_id')->references('id')->on('distritos');
+
+            // fk barrio
+            $table->unsignedBigInteger('barrio_id')->nullable();
+            $table->foreign('barrio_id')->references('id')->on('barrios');
+
+            $table->string('numero_finca')->nullable();
+
+            $table->longText('address')->nullable();
             $table->integer('area')->nullable();
             $table->integer('agent_id');
             $table->longText('description')->nullable();
@@ -40,6 +55,7 @@ class CreatePropertiesTable extends Migration
             $table->string('location_longitude')->nullable();
             $table->text('nearby')->nullable();
             $table->timestamps();
+            $table->double('price_local', 8, 2)->nullable();
         });
     }
 
