@@ -7,6 +7,11 @@
     <!-- JQuery DataTable Css -->
     <link rel="stylesheet" href="{{ asset('backend/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css') }}">
 
+    {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/> --}}
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css" rel="stylesheet">  
+    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 @endpush
 
 @section('content')
@@ -29,7 +34,7 @@
                         <table id="example" class="table table-bordered table-striped table-hover js-exportable">
                             <thead>
                                 <tr>
-                                    <th>SL.</th>
+                                    <th>ID</th>
                                     <th>Image</th>
                                     <th>Title</th>
                                     <th>Author</th>
@@ -46,7 +51,7 @@
                             <tbody>
                                 @foreach( $properties as $key => $property )
                                 <tr>
-                                    <td>{{$key+1}}</td>
+                                    <td>{{$property->id}}</td>
                                     <td>
                                         @if(Storage::disk('public')->exists('property/'.$property->image) && $property->image)
                                             <img src="{{Storage::url('property/'.$property->image)}}" alt="{{$property->title}}" width="60" class="img-responsive img-rounded">
@@ -117,7 +122,40 @@
     <!-- Custom Js -->
     <script src="{{ asset('backend/js/pages/tables/jquery-datatable.js') }}"></script>
 
-    <script>
+    <script type="text/javascript">
+
+        /* $(function() {
+            if ( $.fn.dataTable.isDataTable( '#example' ) ) {
+                table = $('#example').DataTable();
+            }
+            else {
+                table = $('#example').DataTable( {
+                    retrieve: true,
+                    processing: true,
+                    serverSide: true,
+                    ajax: "{{ route('properties.index') }}",
+                    paging: true,
+                    searching: true,
+                    data: {
+                    "_token": "{{ csrf_token() }}",  
+                    },            
+                    columns: [                
+                        {data: 'id', name: 'id', orderable: true, searchable: true },
+                        {data: 'image', name: 'image'},          
+                        {data: 'title', name: 'title'},          
+                        {data: 'user.name', name: 'user.name'},          
+                        {data: 'type', name: 'type'},          
+                        {data: 'purpose', name: 'purpose'},          
+                        {data: 'bedroom', name: 'bedroom'},          
+                        {data: 'bathroom', name: 'bathroom'},          
+                        {data: 'comments_count', name: 'comments_count'},          
+                        {data: 'feature', name: 'feature'}
+                    ]
+                } );
+            }
+        }); */
+
+
         function deletePost(id){
             
             swal({
@@ -140,6 +178,11 @@
             })
         }
     </script>
-
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/1.10.12/sorting/datetime-moment.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
 
 @endpush

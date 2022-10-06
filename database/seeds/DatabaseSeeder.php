@@ -65,5 +65,12 @@ class DatabaseSeeder extends Seeder
             ]
         ]);
 
+        $this->call([
+            ProvinciasTableSeeder::class,
+            CantonesTableSeeder::class,
+            DistritosTableSeeder::class,
+            BarriosTableSeeder::class,
+        ]);
+
     }   
 }   

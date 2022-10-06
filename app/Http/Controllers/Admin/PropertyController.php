@@ -8,6 +8,11 @@ use App\Property;
 use App\Feature;
 use App\PropertyImageGallery;
 use App\Comment;
+use Illuminate\Support\Str;
+
+use App\Provincia;
+use Yajra\Datatables\Datatables;
+use Illuminate\Http\JsonResponse;
 
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
@@ -19,9 +24,17 @@ use File;
 class PropertyController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
         $properties = Property::latest()->withCount('comments')->get();
+
+        if ($request->ajax()) {
+
+            $query = $properties;
+
+            return Datatables::of($query)
+                ->make(true);
+        }
 
         return view('admin.properties.index',compact('properties'));
     }
@@ -30,8 +43,9 @@ class PropertyController extends Controller
     public function create()
     {   
         $features = Feature::all();
+        $provincias = Provincia::all();
 
-        return view('admin.properties.create',compact('features'));
+        return view('admin.properties.create',compact('features','provincias'));
     }
 
 
@@ -40,18 +54,20 @@ class PropertyController extends Controller
         define('IMG_TYPE','file|mimes:jpeg,jpg,png');
         
         $request->validate([
-            'title'     => 'required|unique:properties|max:255',
-            'price'     => 'required',
-            'purpose'   => 'required',
-            'type'      => 'required',
-            'bedroom'   => 'required',
-            'bathroom'  => 'required',
-            'city'      => 'required',
-            'address'   => 'required',
-            'area'      => 'required',
-            'image'     => 'required|'.IMG_TYPE,
+            'title'         => 'required|unique:properties|max:255',
+            'price'         => 'required',
+            'purpose'       => 'required',
+            'type'          => 'required',
+            'bedroom'       => 'required',
+            'bathroom'      => 'required',
+            'provincia_id'  => 'required',
+            'canton_id'     => 'required',
+            'numero_finca'  => 'required',
+            'address'       => 'required',
+            'area'          => 'required',
+            'image'         => 'required|'.IMG_TYPE,
             //'floor_plan'=> IMG_TYPE,
-            'description'        => 'required'
+            'description'   => 'required'
         ]);
 
         $image = $request->file('image');
@@ -92,9 +108,17 @@ class PropertyController extends Controller
         $property->type     = $request->type;
         $property->image    = $imagename;
         $property->bedroom  = $request->bedroom;
+        $property->provincia_id  = $request->provincia_id;
+        $property->canton_id  = $request->canton_id;
+        $property->distrito_id  = $request->distrito_id;
+        $property->barrio_id  = $request->barrio_id;
         $property->bathroom = $request->bathroom;
-        $property->city     = $request->city;
-        $property->city_slug= str_slug($request->city);
+        $property->numero_finca     = $request->numero_finca;
+
+        $ciudad = Provincia::findOrFail($request->provincia_id);
+
+        $property->city = $ciudad->name;
+        $property->city_slug= Str::slug($ciudad->name);
         $property->address  = $request->address;
         $property->area     = $request->area;
 

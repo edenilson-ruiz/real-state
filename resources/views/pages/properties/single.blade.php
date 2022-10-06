@@ -282,7 +282,7 @@
                                         </div>
                                         <div class="box">
                                             <button id="msgsubmitbtn" class="btn waves-effect waves-light w100 indigo" type="submit">
-                                                ENVIAR
+                                                <span style="position: absolute; top: 0; left: 40%;">ENVIAR</span>
                                                 <i class="material-icons left">send</i>
                                             </button>
                                         </div>
@@ -323,7 +323,7 @@
                                                 <div class="card-stacked">
                                                     <div class="p-l-10 p-r-10 indigo-text">
                                                         <h6 title="{{$property_related->title}}">{{ str_limit( $property_related->title, 18 ) }}</h6>
-                                                        <strong>&dollar;{{$property_related->price}}</strong>
+                                                        <strong>{{ $property_related->price ? '$ ' . number_format($property_related->price) : '₡ '.number_format($property_related->price_local)}}</strong>
                                                     </div>
                                                 </div>
                                             </div>
@@ -412,7 +412,7 @@
                     data: data,
                     beforeSend: function() {
                         $(btn).addClass('disabled');
-                        $(btn).empty().append('LOADING...<i class="material-icons left">rotate_right</i>');
+                        $(btn).empty().append('<span style="position: absolute; top: 0; left: 40%;">LOADING</span>...<i class="material-icons left">rotate_right</i>');
                     },
                     success: function(data) {
                         if (data.message) {
@@ -425,7 +425,7 @@
                     complete: function() {
                         $('form.agent-message-box')[0].reset();
                         $(btn).removeClass('disabled');
-                        $(btn).empty().append('SEND<i class="material-icons left">send</i>');
+                        $(btn).empty().append('<span style="position: absolute; top: 0; left: 40%;">ENVIAR</span><i class="material-icons left">send</i>');
                     },
                     dataType: 'json'
                 });

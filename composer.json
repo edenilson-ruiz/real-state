@@ -13,7 +13,8 @@
         "laravel/tinker": "^1.0",
         "php-parallel-lint/php-console-color": "^1.0",
         "php-parallel-lint/php-console-highlighter": "^1.0",
-        "symfony/mailer": "^5.4"
+        "symfony/mailer": "^5.4",
+        "yajra/laravel-datatables-oracle": "^9.10"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "3.2.3",
