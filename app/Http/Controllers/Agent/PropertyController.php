@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Agent;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use App\Property;
 use App\Feature;
@@ -51,7 +52,7 @@ class PropertyController extends Controller
         ]);
 
         $image = $request->file('image');
-        $slug  = str_slug($request->title);
+        $slug  = Str::slug($request->title);
 
         if(isset($image)){
             $currentDate = Carbon::now()->toDateString();
@@ -90,7 +91,7 @@ class PropertyController extends Controller
         $property->bedroom  = $request->bedroom;
         $property->bathroom = $request->bathroom;
         $property->city     = $request->city;
-        $property->city_slug= str_slug($request->city);
+        $property->city_slug= Str::slug($request->city);
         $property->address  = $request->address;
         $property->area     = $request->area;
 

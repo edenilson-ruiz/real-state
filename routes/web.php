@@ -2,7 +2,7 @@
 
 Route::get('datatables', 'DatatablesController@getIndex')->name('datatables');
 Route::get('anyData', 'DatatablesController@anyData')->name('datatables.data');
-Route::get('allProperties', 'DatatablesController@allProperties')->name('datatables.properties');
+// Route::get('allProperties', 'DatatablesController@allProperties')->name('datatables.properties');
 
 // FRONT-END ROUTES
 Route::get('/', 'FrontpageController@index')->name('home');
@@ -44,8 +44,10 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admi
     Route::resource('categories','CategoryController');
     Route::resource('posts','PostController');
     Route::resource('features','FeatureController');
+    Route::get('allProperties', 'PropertyController@allProperties')->name('datatables.properties');
     Route::resource('properties','PropertyController');
     Route::post('properties/gallery/delete','PropertyController@galleryImageDelete')->name('gallery-delete');
+
 
     Route::resource('sliders','SliderController');
     Route::resource('services','ServiceController');

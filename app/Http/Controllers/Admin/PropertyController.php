@@ -8,6 +8,7 @@ use App\Property;
 use App\Feature;
 use App\PropertyImageGallery;
 use App\Comment;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 use App\Provincia;
@@ -26,17 +27,49 @@ class PropertyController extends Controller
 
     public function index(Request $request)
     {
-        $properties = Property::latest()->withCount('comments')->get();
-
-        if ($request->ajax()) {
-
-            $query = $properties;
-
-            return Datatables::of($query)
-                ->make(true);
-        }
+        $properties = Property::latest()->withCount('comments')->take(5)->get();
 
         return view('admin.properties.index',compact('properties'));
+    }
+
+    public function allProperties() {
+        /*$query = DB::table('properties')->select([
+            'id',
+            'image',
+            'title',
+            'created_at',
+            'updated_at']
+        );*/
+
+        $query = Property::latest()->withCount('comments')->with('user')->get();
+
+        return Datatables::of($query)
+            ->addColumn('title', function($property) {
+                return Str::limit($property->title, 10);
+            })
+            ->addColumn('author', function($property) {
+                return $property->user->name;
+            })
+            ->addColumn('image', function ($property) {
+                // return '<a href="#edit-'.$property->id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+                return '<img src="/storage/property/'.$property->image.'" alt="'.$property->title.'" width="60" class="img-responsive img-rounded">';
+            })
+            ->addColumn('comments_count', function($property) {
+                return '<span class="badge bg-indigo">'.$property->comments_count.'</span>';
+            })
+            ->addColumn('star', function($property) {
+                if($property->featured == true ) {
+                    return '<span class="badge bg-indigo"><i class="material-icons small">star</i></span>';
+                }
+            })
+            ->addColumn('action', function($property) {
+                return $property->slug;
+                /*return "<a href=\"$server/admin/properties/$property->slug\" class=\"btn btn-success btn-sm waves-effect\">
+                            <i class=\"material-icons\">visibility</i>
+                        </a>";*/
+            })
+            ->rawColumns(['image','comments_count','star','action'])
+            ->make(true);
     }
 
 
@@ -71,7 +104,7 @@ class PropertyController extends Controller
         ]);
 
         $image = $request->file('image');
-        $slug  = str_slug($request->title);
+        $slug  = Str::slug($request->title);
 
         if(isset($image)){
             $currentDate = Carbon::now()->toDateString();
@@ -204,7 +237,7 @@ class PropertyController extends Controller
         ]);
 
         $image = $request->file('image');
-        $slug  = str_slug($request->title);
+        $slug  = Str::slug($request->title);
 
         $property = Property::find($property->id);
 
@@ -254,7 +287,7 @@ class PropertyController extends Controller
         $property->bedroom      = $request->bedroom;
         $property->bathroom     = $request->bathroom;
         $property->city         = $request->city;
-        $property->city_slug    = str_slug($request->city);
+        $property->city_slug    = Str::slug($request->city);
         $property->address      = $request->address;
         $property->area         = $request->area;
 

@@ -526,7 +526,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     };
 
     fn["inner" + v] = function () {
-      return this[0]["lient" + v];
+      return this[0]["client" + v];
     };
 
     fn["outer" + v] = function (margins) {

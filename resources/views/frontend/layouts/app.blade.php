@@ -48,7 +48,7 @@
         <!--JavaScript at end of body for optimized loading-->
         {{-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> --}}
         <script type="text/javascript" src="{{ asset('frontend/js/jquery.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('frontend/js/materialize.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('frontend/js/materialize.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
@@ -58,7 +58,7 @@
                 @foreach ($errors->all() as $error)
                     toastr.error('{{ $error }}','Error',{
                         closeButtor: true,
-                        progressBar: true 
+                        progressBar: true
                     });
                 @endforeach
             @endif
