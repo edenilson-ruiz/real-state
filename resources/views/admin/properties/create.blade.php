@@ -26,28 +26,28 @@
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="text" name="title" class="form-control" value="{{old('title')}}">
+                            <input type="text" name="title" class="form-control" value="{{old('title')}}" required>
                             <label class="form-label">Property Title</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="number" class="form-control" name="price" required>
+                            <input type="number" class="form-control" name="price" value="{{old('price')}}" required>
                             <label class="form-label">Price</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="number" class="form-control" name="bedroom" required>
+                            <input type="number" class="form-control" name="bedroom" value="{{old('bedroom')}}" required>
                             <label class="form-label">Bedroom</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="number" class="form-control" name="bathroom" required>
+                            <input type="number" class="form-control" name="bathroom" value="{{old('bathroom')}}" required>
                             <label class="form-label">Bathroom</label>
                         </div>
                     </div>
@@ -56,28 +56,28 @@
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="text" class="form-control" name="numero_finca" required>
+                            <input type="text" class="form-control" name="numero_finca" value="{{old('numero_finca')}}">
                             <label class="form-label">Numero de Finca</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="text" class="form-control" name="address" required>
+                            <input type="text" class="form-control" name="address" value="{{old('address')}}" required>
                             <label class="form-label">Address</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="number" class="form-control" name="area" required>
+                            <input type="number" class="form-control" name="area" value="{{old('area')}}" required>
                             <label class="form-label">Area</label>
                         </div>
                         <div class="help-info">Square Feet</div>
                     </div>
 
                     <div class="form-group">
-                        <input type="checkbox" id="featured" name="featured" class="filled-in" value="1" />
+                        <input type="checkbox" id="featured" name="featured" class="filled-in" @if(old('featured')) checked @endif/>
                         <label for="featured">Featured</label>
                     </div>
 
@@ -114,7 +114,7 @@
                     <div class="form-group form-float">
                         <div class="form-line {{$errors->has('purpose') ? 'focused error' : ''}}">
                             <label>Select Purpose</label>
-                            <select name="purpose" class="form-control show-tick">
+                            <select name="purpose" id="purpose" class="form-control show-tick">
                                 <option value="">-- Please select --</option>
                                 <option value="venta">Venta</option>
                                 <option value="renta">Renta</option>
@@ -184,7 +184,7 @@
                 </div>
                 <div class="body">
                     <div class="form-group">
-                        <input type="file" name="image">
+                        <input type="file" name="image" required>
                     </div>
 
                     {{-- BUTTON --}}
@@ -220,6 +220,11 @@
         $(function () {
             tinymce.init({
                 selector: "textarea#tinymce",
+                setup:function(ed) {
+                    ed.on('change', function(e) {
+                        $("#"+ed.id).text(ed.getContent());
+                    });
+                },
                 theme: "modern",
                 height: 300,
                 plugins: [

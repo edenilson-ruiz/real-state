@@ -30,21 +30,21 @@
 
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" name="name" class="form-control" value="{{ $profile->name or null }}">
+                                <input type="text" name="name" class="form-control" value="{{ $profile->name }}">
                                 <label class="form-label">Name</label>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" name="username" class="form-control" value="{{ $profile->username or null }}">
+                                <input type="text" name="username" class="form-control" value="{{ $profile->username}}">
                                 <label class="form-label">User Name</label>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="email" name="email" class="form-control" value="{{ $profile->email or null }}">
+                                <input type="email" name="email" class="form-control" value="{{ $profile->email}}">
                                 <label class="form-label">Email</label>
                             </div>
                         </div>
@@ -61,8 +61,8 @@
 
                         <div class="form-group">
                             <div class="form-line">
-                                <textarea name="about" rows="4" class="form-control no-resize">{{ $profile->about or null }}</textarea>
-                                <label class="form-label">About Us</label>
+                                <label for="about">About Us</label>
+                                <textarea name="about" id="about">{{ $profile->about}}</textarea>
                             </div>
                         </div>
 
@@ -84,25 +84,48 @@
 
 @push('scripts')
 
-<script>
-    $(function(){
-        function showImage(fileInput,imgID){
-            if (fileInput.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e){
-                    $(imgID).attr('src',e.target.result);
-                    $(imgID).attr('alt',fileInput.files[0].name);
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/js/fileinput.min.js"></script>
+    <script src="{{asset('backend/plugins/tinymce/tinymce.js')}}"></script>
+
+    <script>
+        $(function(){
+            function showImage(fileInput,imgID){
+                if (fileInput.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e){
+                        $(imgID).attr('src',e.target.result);
+                        $(imgID).attr('alt',fileInput.files[0].name);
+                    }
+                    reader.readAsDataURL(fileInput.files[0]);
                 }
-                reader.readAsDataURL(fileInput.files[0]);
             }
-        }
-        $('#profile-image-btn').on('click', function(){
-            $('#profile-image-input').click();
-        });
-        $('#profile-image-input').on('change', function(){
-            showImage(this, '#profile-imgsrc');
-        });
-    })
-</script>
+
+            $(function () {
+                tinymce.init({
+                    selector: "textarea#about",
+                    theme: "modern",
+                    height: 300,
+                    plugins: [
+                        'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                        'searchreplace wordcount visualblocks visualchars code fullscreen',
+                        'insertdatetime media nonbreaking save table contextmenu directionality',
+                        'emoticons template paste textcolor colorpicker textpattern imagetools'
+                    ],
+                    toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+                    toolbar2: 'print preview media | forecolor backcolor emoticons',
+                    image_advtab: true
+                });
+                tinymce.suffix = ".min";
+                tinyMCE.baseURL = '{{asset('backend/plugins/tinymce')}}';
+            });
+
+            $('#profile-image-btn').on('click', function(){
+                $('#profile-image-input').click();
+            });
+            $('#profile-image-input').on('change', function(){
+                showImage(this, '#profile-imgsrc');
+            });
+        })
+    </script>
 
 @endpush

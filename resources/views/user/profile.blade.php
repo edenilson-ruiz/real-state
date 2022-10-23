@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">assignment_ind</i>
-                                    <input id="username" name="username" type="text" value="{{ $profile->username or null }}" class="validate">
+                                    <input id="username" name="username" type="text" value="{{ $profile->username }}" class="validate">
                                     <label for="username">Nombre de usuario</label>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">mode_edit</i>
-                                    <textarea id="about" name="about" class="materialize-textarea">{{ $profile->about or null }}</textarea>
+                                    <textarea id="about" name="about" class="materialize-textarea">{{ $profile->about }}</textarea>
                                     <label for="about">Acerca de</label>
                                 </div>
                             </div>

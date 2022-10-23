@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">assignment_ind</i>
-                                    <input id="username" name="username" type="text" value="{{ $profile->username or null }}" class="validate">
+                                    <input id="username" name="username" type="text" value="{{ $profile->username }}" class="validate">
                                     <label for="username">Username</label>
                                 </div>
                             </div>
@@ -55,9 +55,10 @@
 
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <i class="material-icons prefix">mode_edit</i>
-                                    <textarea id="about" name="about" class="materialize-textarea">{{ $profile->about or null }}</textarea>
-                                    <label for="about">About</label>
+                                    <div class="form-group">
+                                        <label for="about">About</label>
+                                        <textarea id="about" name="about">{{ $profile->about }}</textarea>
+                                    </div>
                                 </div>
                             </div>
 
@@ -81,10 +82,32 @@
 @endsection
 
 @section('scripts')
-<script>
-    $(document).ready(function() {
-        $('textarea#about').characterCounter();
-    });
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/js/fileinput.min.js"></script>
+    <script src="{{asset('backend/plugins/tinymce/tinymce.js')}}"></script>
+
+    <script>
+        $(function(){
+
+            $(function () {
+                tinymce.init({
+                    selector: "textarea#about",
+                    theme: "modern",
+                    height: 300,
+                    plugins: [
+                        'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                        'searchreplace wordcount visualblocks visualchars code fullscreen',
+                        'insertdatetime media nonbreaking save table contextmenu directionality',
+                        'emoticons template paste textcolor colorpicker textpattern imagetools'
+                    ],
+                    toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+                    toolbar2: 'print preview media | forecolor backcolor emoticons',
+                    image_advtab: true
+                });
+                tinymce.suffix = ".min";
+                tinyMCE.baseURL = '{{asset('backend/plugins/tinymce')}}';
+            });
+        })
+    </script>
 
 </script>
 @endsection

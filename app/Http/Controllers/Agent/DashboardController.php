@@ -42,8 +42,7 @@ class DashboardController extends Controller
             'name'      => 'required',
             'username'  => 'required',
             'email'     => 'required|email',
-            'image'     => 'image|mimes:jpeg,jpg,png',
-            'about'     => 'max:250'
+            'image'     => 'file|mimes:jpeg,jpg,png'
         ]);
 
         $user = User::find(Auth::id());
@@ -63,12 +62,12 @@ class DashboardController extends Controller
             }
             $userimage = Image::make($image)->stream();
             Storage::disk('public')->put('users/'.$imagename, $userimage);
+            $user->image = $imagename;
         }
 
         $user->name = $request->name;
         $user->username = $request->username;
         $user->email = $request->email;
-        $user->image = $imagename;
         $user->about = $request->about;
 
         $user->save();

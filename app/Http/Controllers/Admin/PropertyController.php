@@ -95,7 +95,6 @@ class PropertyController extends Controller
             'bathroom'      => 'required',
             'provincia_id'  => 'required',
             'canton_id'     => 'required',
-            'numero_finca'  => 'required',
             'address'       => 'required',
             'area'          => 'required',
             'image'         => 'required|'.IMG_TYPE,
@@ -229,8 +228,8 @@ class PropertyController extends Controller
             'city'      => 'required',
             'address'   => 'required',
             'area'      => 'required',
-            //'image'     => 'image|mimes:jpeg,jpg,png',
-            //'floor_plan'=> 'image|mimes:jpeg,jpg,png',  
+            //'image'     => 'file|mimes:jpeg,jpg,png',
+            //'floor_plan'=> 'file|mimes:jpeg,jpg,png',
             'description'        => 'required',
             'location_latitude'  => 'required',
             'location_longitude' => 'required'
