@@ -22,7 +22,7 @@
                                 <strong>{{ $agent->email }}</strong>
                             </div>
                             <div class="">
-                                <p>{{ $agent->about }}</p>
+                                <p>{!! $agent->about !!}</p>
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-<footer class="page-footer indigo darken-2">
+<footer class="page-footer darken-2" style="background-color: #303845">
     <div class="container">
         <div class="row">
             <div class="col m4 s12">

@@ -1,7 +1,7 @@
 
 <!-- SEARCH SECTION -->
 
-<section class="indigo darken-2 white-text center">
+<section class="darken-2 white-text center" style="background-color: rgba(0, 0, 0, 0.5);">
     <div class="container">
         <div class="row m-b-0">
             <div class="col s12">

@@ -255,7 +255,7 @@
                                             </div>
                                         </div>
                                         <div class="p-l-10 p-r-10">
-                                            <p>{{ $property->user->about }}</p>
+                                            <p>{!! $property->user->about !!}</p>
                                             <a href="{{ route('agents.show',$property->agent_id) }}" class="profile-link">Perfil</a>
                                         </div>
                                     @endif

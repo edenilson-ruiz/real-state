@@ -48,7 +48,7 @@
                                 </a>
 
                                 <div class="address">
-                                    <i class="small material-icons left">place</i>
+                                    <i class="material-icons left">map</i>
                                     <span>{{ ucfirst($property->city) }}</span>
                                 </div>
                                {{--  <div class="address">
@@ -57,50 +57,41 @@
                                 </div> --}}
 
                                 <div class="address">
-                                    <i class="small material-icons left">check_box</i>
+                                    <i class="material-icons left">home</i>
                                     <span>{{ ucfirst($property->type) }}</span>
                                 </div>
                                 <div class="address">
-                                    <i class="small material-icons left">check_box</i>
+                                    <i class="material-icons left">loyalty</i>
                                     <span>For {{ ucfirst($property->purpose) }}</span>
                                 </div>
 
                                 <h5>
-                                    &dollar;{{ $property->price }}
+                                    {{ $property->price  ? '$ ' . number_format($property->price) : '₡ '.number_format($property->price_local) }}
                                     <div class="right" id="propertyrating-{{$property->id}}"></div>
                                 </h5>                                
                             </div>
                             <div class="card-action property-action">
-                                <table>
-                                    <tr>
-                                        <td>
+                                
                                             <span class="btn-flat">
-                                                <i class="material-icons">check_box</i>
-                                                Cuartos: <strong>{{ $property->bedroom}}</strong> 
+                                                <i class="material-icons">hotel</i>
+                                                Cuartos: <strong>{{ $property->bedroom}}</strong>
                                             </span>
-                                        </td>
-                                        <td>
+                                      
                                             <span class="btn-flat">
-                                                <i class="material-icons">check_box</i>
+                                                <i class="material-icons">bathtub</i>
                                                 Baños: <strong>{{ $property->bathroom}}</strong> 
                                             </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
+                                       
                                             <span class="btn-flat">
-                                                <i class="material-icons">check_box</i>
+                                                <i class="material-icons">home</i>
                                                 Area: <strong>{{ $property->area}}</strong> M2
                                             </span>
-                                        </td>
-                                        <td>
+                                       
                                             <span class="btn-flat">
                                                 <i class="material-icons">comment</i> 
                                                 <strong>{{ $property->comments_count}}</strong>
                                             </span>
-                                        </td>
-                                    </tr>
-                                </table>
+                                        
                                 {{-- <span class="btn-flat">
                                     <i class="material-icons">check_box</i>
                                     Cuartos: <strong>{{ $property->bedroom}}</strong> 
