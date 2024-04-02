@@ -17,16 +17,16 @@
                         <div class="input-field col s12 m2">
                             <select name="type" class="browser-default">
                                 <option value="" disabled selected>Elija un tipo</option>
-                                <option value="apartment">Apartamento</option>
-                                <option value="house">Casa</option>
+                                <option value="apartamento">Apartamento</option>
+                                <option value="casa">Casa</option>
                             </select>
                         </div>
 
                         <div class="input-field col s12 m2">
                             <select name="purpose" class="browser-default">
                                 <option value="" disabled selected>Proposito</option>
-                                <option value="rent">Renta</option>
-                                <option value="sale">Venta</option>
+                                <option value="renta">Renta</option>
+                                <option value="venta">Venta</option>
                             </select>
                         </div>
 

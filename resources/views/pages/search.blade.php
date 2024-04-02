@@ -12,35 +12,35 @@
 
                 <div class="col s12 m4 card">
 
-                    <h2 class="sidebar-title">search property</h2>
+                    <h2 class="sidebar-title">buscar propiedad</h2>
 
                     <form class="sidebar-search" action="{{ route('search')}}" method="GET">
 
                         <div class="searchbar">
                             <div class="input-field col s12">
                                 <input type="text" name="city" id="autocomplete-input-sidebar" class="autocomplete custominputbox" autocomplete="off">
-                                <label for="autocomplete-input-sidebar">Enter City or State</label>
+                                <label for="autocomplete-input-sidebar">Ingrese una ciudad</label>
                             </div>
     
                             <div class="input-field col s12">
                                 <select name="type" class="browser-default">
-                                    <option value="" disabled selected>Choose Type</option>
-                                    <option value="apartment">Apartment</option>
-                                    <option value="house">House</option>
+                                    <option value="" disabled selected>Elija el tipo</option>
+                                    <option value="apartamento">Apartamento</option>
+                                    <option value="casa">Casa</option>
                                 </select>
                             </div>
     
                             <div class="input-field col s12">
                                 <select name="purpose" class="browser-default">
-                                    <option value="" disabled selected>Choose Purpose</option>
-                                    <option value="rent">Rent</option>
-                                    <option value="sale">Sale</option>
+                                    <option value="" disabled selected>Elija el propósito</option>
+                                    <option value="renta">Renta</option>
+                                    <option value="venta">Venta</option>
                                 </select>
                             </div>
     
                             <div class="input-field col s12">
                                 <select name="bedroom" class="browser-default">
-                                    <option value="" disabled selected>Choose Bedroom</option>
+                                    <option value="" disabled selected>Elija dormitorios</option>
                                     @foreach($bedroomdistinct as $bedroom)
                                         <option value="{{$bedroom->bedroom}}">{{$bedroom->bedroom}}</option>
                                     @endforeach
@@ -49,7 +49,7 @@
 
                             <div class="input-field col s12">
                                 <select name="bathroom" class="browser-default">
-                                    <option value="" disabled selected>Choose Bathroom</option>
+                                    <option value="" disabled selected>Elija baños</option>
                                     @foreach($bathroomdistinct as $bathroom)
                                         <option value="{{$bathroom->bathroom}}">{{$bathroom->bathroom}}</option>
                                     @endforeach
@@ -58,12 +58,12 @@
     
                             <div class="input-field col s12">
                                 <input type="number" name="minprice" id="minprice" class="custominputbox">
-                                <label for="minprice">Min Price</label>
+                                <label for="minprice">Min Precio</label>
                             </div>
     
                             <div class="input-field col s12">
                                 <input type="number" name="maxprice" id="maxprice" class="custominputbox">
-                                <label for="maxprice">Max Price</label>
+                                <label for="maxprice">Max Precio</label>
                             </div>
     
                             <div class="input-field col s12">
@@ -88,7 +88,7 @@
                             <div class="input-field col s12">
                                 <button class="btn btnsearch indigo" type="submit">
                                     <i class="material-icons left">search</i>
-                                    <span>SEARCH</span>
+                                    <span>BUSCAR</span>
                                 </button>
                             </div>
                         </div>

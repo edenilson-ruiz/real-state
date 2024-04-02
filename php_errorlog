@@ -1,0 +1,49 @@
+[02-Apr-2024 04:28:55 UTC] PHP Fatal error:  Uncaught Error: Class 'JakubOnderka\PhpConsoleHighlighter\Highlighter' not found in /home/customer/www/propiedades.vivicr.com/real-state/vendor/nunomaduro/collision/src/Highlighter.php:23
+Stack trace:
+#0 /home/customer/www/propiedades.vivicr.com/real-state/vendor/composer/ClassLoader.php(571): include()
+#1 /home/customer/www/propiedades.vivicr.com/real-state/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile('/home/customer/...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('NunoMaduro\\Coll...')
+#3 /home/customer/www/propiedades.vivicr.com/real-state/vendor/nunomaduro/collision/src/Writer.php(91): spl_autoload_call('NunoMaduro\\Coll...')
+#4 /home/customer/www/propiedades.vivicr.com/real-state/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\Collision\Writer->__construct()
+#5 /home/customer/www/propiedades.vivicr.com/real-state/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\Collision\Handler->__construct()
+#6 [internal function]: NunoMaduro\Collisi in /home/customer/www/propiedades.vivicr.com/real-state/vendor/nunomaduro/collision/src/Highlighter.php on line 23
+[02-Apr-2024 11:45:38 UTC] PHP Fatal error:  Uncaught Error: Class 'JakubOnderka\PhpConsoleHighlighter\Highlighter' not found in /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Highlighter.php:23
+Stack trace:
+#0 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/composer/ClassLoader.php(571): include()
+#1 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile('/home/customer/...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('NunoMaduro\\Coll...')
+#3 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Writer.php(91): spl_autoload_call('NunoMaduro\\Coll...')
+#4 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\Collision\Writer->__construct()
+#5 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\Col in /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Highlighter.php on line 23
+[02-Apr-2024 11:58:38 UTC] PHP Fatal error:  Uncaught Error: Class 'JakubOnderka\PhpConsoleHighlighter\Highlighter' not found in /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Highlighter.php:23
+Stack trace:
+#0 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/composer/ClassLoader.php(571): include()
+#1 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile('/home/customer/...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('NunoMaduro\\Coll...')
+#3 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Writer.php(91): spl_autoload_call('NunoMaduro\\Coll...')
+#4 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\Collision\Writer->__construct()
+#5 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\Col in /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Highlighter.php on line 23
+[02-Apr-2024 11:58:47 UTC] PHP Fatal error:  Uncaught Error: Class 'JakubOnderka\PhpConsoleHighlighter\Highlighter' not found in /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Highlighter.php:23
+Stack trace:
+#0 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/composer/ClassLoader.php(571): include()
+#1 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile('/home/customer/...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('NunoMaduro\\Coll...')
+#3 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Writer.php(91): spl_autoload_call('NunoMaduro\\Coll...')
+#4 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\Collision\Writer->__construct()
+#5 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\Col in /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Highlighter.php on line 23
+[02-Apr-2024 11:22:36 America/Costa_Rica] PHP Fatal error:  Uncaught Error: Class 'JakubOnderka\PhpConsoleHighlighter\Highlighter' not found in /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Highlighter.php:23
+Stack trace:
+#0 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/composer/ClassLoader.php(571): include()
+#1 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile('/home/customer/...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('NunoMaduro\\Coll...')
+#3 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Writer.php(91): spl_autoload_call('NunoMaduro\\Coll...')
+#4 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\Collision\Writer->__construct()
+#5 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\Col in /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Highlighter.php on line 23
+[02-Apr-2024 12:10:50 America/Costa_Rica] PHP Fatal error:  Uncaught Error: Class 'JakubOnderka\PhpConsoleHighlighter\Highlighter' not found in /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Highlighter.php:23
+Stack trace:
+#0 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/composer/ClassLoader.php(571): include()
+#1 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile('/home/customer/...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('NunoMaduro\\Coll...')
+#3 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Writer.php(91): spl_autoload_call('NunoMaduro\\Coll...')
+#4 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\Collision\Writer->__construct()
+#5 /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\Col in /home/customer/www/propiedades.vivicr.com/public_html/real-state/vendor/nunomaduro/collision/src/Highlighter.php on line 23

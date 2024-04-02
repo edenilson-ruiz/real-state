@@ -5827,7 +5827,7 @@ $jscomp.polyfill = function (e, r, p, m) {
       key: "_enableBodyScrolling",
       value: function _enableBodyScrolling() {
         var body = document.body;
-        body.style.overflow = '';
+        body.style.overflow = 'block';
       }
     }, {
       key: "open",
@@ -5934,7 +5934,7 @@ $jscomp.polyfill = function (e, r, p, m) {
           start = this.percentOpen;
         } else {
           $(this._overlay).css({
-            display: 'block'
+            display: 'none'
           });
         }
 
